@@ -12,10 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 #[Route('/user')]
-#[IsGranted('ROLE_ADMIN')]
 class UserController extends AbstractController
 {
     private UserPasswordHasherInterface $passwordHasher;

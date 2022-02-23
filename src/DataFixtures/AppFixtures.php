@@ -8,8 +8,6 @@ use Doctrine\Persistence\ObjectManager;
 use App\Factory\UserFactory;
 use App\Factory\MakeFactory;
 use App\Factory\PhoneFactory;
-use App\Factory\CampusFactory;
-use App\Factory\StudentFactory;
 
 class AppFixtures extends Fixture
 {
@@ -25,44 +23,6 @@ class AppFixtures extends Fixture
             'username' => 'john',
             'password' => 'doe',
             'role' => 'ROLE_ADMIN'
-        ]);
-
-        MakeFactory::createOne(['name' => 'Apple']);
-        MakeFactory::createOne(['name' => 'Samsung']);
-        MakeFactory::createOne(['name' => 'Sony']);
-
-        PhoneFactory::createOne([
-            'model' => 'iPhone X',
-            'memory' => '128',
-            'manufacturer' => MakeFactory::find(['name' => 'Apple']),
-        ]);
-
-        PhoneFactory::createOne([
-            'model' => 'Galaxy 21',
-            'memory' => '256',
-            'manufacturer' => MakeFactory::find(['name' => 'Samsung']),
-        ]);
-
-        CampusFactory::createOne(['location' => 'Blanchardstown']);
-        CampusFactory::createOne(['location' => 'Tallaght']);
-        CampusFactory::createOne(['location' => 'City']);
-
-        StudentFactory::createOne([
-            'age' => 21,
-            'name' => 'Matt Smith',
-            'campus' => CampusFactory::find(['location' => 'Blanchardstown']),
-        ]);
-
-        StudentFactory::createOne([
-            'age' => 96,
-            'name' => 'Granny Smith',
-            'campus' => CampusFactory::find(['location' => 'Tallaght']),
-        ]);
-
-        StudentFactory::createOne([
-            'age' => 19,
-            'name' => 'Sinead Mullen',
-            'campus' => CampusFactory::find(['location' => 'Tallaght']),
         ]);
 
     }

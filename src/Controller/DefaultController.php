@@ -12,8 +12,10 @@ class DefaultController extends AbstractController
     public function index(): Response
     {
         $template = 'default/index.html.twig';
-        $argsArray = [];
-
+        $name = "Graham";
+        $age = 5;
+        $argsArray = ['name' => $name, 'age' => $age];
+        
         return $this->render($template, $argsArray);
     }
 }

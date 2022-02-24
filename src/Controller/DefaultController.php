@@ -11,11 +11,12 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'default')]
     public function index(): Response
     {
+
         $template = 'default/index.html.twig';
         $name = "Graham";
-        $age = 5;
+        $age = 27;
         $argsArray = ['name' => $name, 'age' => $age];
-        
+
         return $this->render($template, $argsArray);
     }
 }
